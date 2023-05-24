@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #88ABFF;
+}
+
+.wrapper {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
+    gap: 15px;
+}
+
+.wrapper li { 
+    height: 250px;
+    list-style: none;
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+}
+
+.wrapper .note { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add-box .icon {
+    border: 2px dashed #88ABFF;
+    height: 78px;
+    width: 78px;
+    border-radius: 50%;
+    font-size:40px;
+    color: #88ABFF;
+    justify-content: center;
+}
+
+.add-box, .icon, .bottom-content, .settings .menu li, .popup-box, .content header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-box {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-box p {
+    color: #88ABFF;
+    font-weight:  500;
+    margin-top: 20px;
+}
+
+.note p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.note span{
+    color: #575757;
+    font-size: 16px; 
+    display: block;
+    margin-top:5px;
+} 
+
+.note .bottom-content {
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.bottom-content .date {
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.bottom-content .settings i {
+    color: #6d6d6d;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.settings {
+    position: relative;
+}
+
+.settings.show .menu{
+    transform: scale(1);
+}
+
+.settings .menu { 
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background: #fff;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+/* .settings:hover .menu {
+    transform: scale(1);
+} */
+
+.settings .menu li{
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 15px;
+    cursor: pointer;
+    border-radius: 0;
+    justify-content: flex-start;
+}  
+
+.menu li:hover {
+    background: #f5f5f5;
+}
+
+.menu li i {
+    padding-right: 8px;
+}
+
+/* POP UP BOX CSS */
+.popup-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:2;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.popup-box .content {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    z-index:3;
+    max-width: 400px;
+    width:100%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.popup-box {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-box .content header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content header p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header i {
+    color:#8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+}
+
+.content form .row {
+    margin-bottom: 20px;
+}
+
+form .row label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.content form :where(input, textarea) {
+    width:100%;
+    height:50px;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius:4px;
+    border: 1px solid #999;
+}
+
+.content form textarea {
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;   
+}
+
+.content form button {
+    width:100%;
+    height:50px;
+    border: none;
+    outline: none;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #639af8;
+}
