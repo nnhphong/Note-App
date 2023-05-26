@@ -118,6 +118,12 @@ let loadData = function(dat = data) {
 
 let prvId = null;
 document.addEventListener('click', (e) => {
+    if (prvId != null) {
+        let elem = document.getElementById(prvId);
+        // close box edit/delete
+        if (elem != null) close(elem.parentElement);
+        prvId = null;
+    }
     // click vao dau ...
     if (e.target.id.startsWith("dots-")) {
         let elem = document.getElementById(e.target.id);
