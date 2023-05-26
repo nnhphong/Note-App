@@ -118,13 +118,6 @@ let loadData = function(dat = data) {
 
 let prvId = null;
 document.addEventListener('click', (e) => {
-    if (prvId != null) {
-        let elem = document.getElementById(prvId);
-        // close box edit/delete
-        close(elem.parentElement);
-        prvId = null;
-    }
-
     // click vao dau ...
     if (e.target.id.startsWith("dots-")) {
         let elem = document.getElementById(e.target.id);
@@ -136,6 +129,12 @@ loadData();
 
 // noteId has a form of "{1, 2, ..}"
 let deleteNote = function(noteId) {
+    if (prvId != null) {
+        let elem = document.getElementById(prvId);
+        // close box edit/delete
+        close(elem.parentElement);
+        prvId = null;
+    }
     // delete HTML of the node has an id "note + {1, 2, 3}"
     const elem = document.getElementById("note" + noteId);
     elem.remove();         
